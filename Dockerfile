@@ -14,4 +14,4 @@ COPY target/scala-2.11/spark-demo_2.11-1.0.0.jar sparkdemo.jar
 
 ENTRYPOINT ["/spark/bin/spark-submit"]
 
-CMD ["--master", "yarn", "--deploy-mode", "cluster", "--executor-memory", "1G", "--num-executors", "1", "--conf", "dfs.client.use.datanode.hostname=true", "--class", "com.sparkdemo.Start", "sparkdemo.jar"]
+CMD ["--master", "yarn", "--deploy-mode", "cluster", "--executor-memory", "1G", "--num-executors", "1", "--conf", "dfs.client.use.datanode.hostname=true", "--conf", "spark.sql.catalogImplementation=in-memory", "--class", "com.sparkdemo.Start", "sparkdemo.jar"]

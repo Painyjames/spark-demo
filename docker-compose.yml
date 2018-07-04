@@ -10,7 +10,7 @@ services:
       - datanode2
       - datanode3
       - resourcemanager
-      - historyserver
+      - doc
 
   namenode:
     image: bde2020/hadoop-namenode:1.1.0-hadoop2.7.1-java8
@@ -40,7 +40,7 @@ services:
     env_file:
       - ./hadoop.env
   
-  historyserver:
+  doc:
     image: bde2020/hadoop-historyserver:1.1.0-hadoop2.7.1-java8
     container_name: historyserver
     depends_on:
